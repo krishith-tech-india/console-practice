@@ -4,7 +4,7 @@ namespace TodoApp.Pages
 {
     public class Home
     {
-        public static void LoadHomePage(List<Todo> todos)
+        public static int LoadHomePage(List<Todo> todos)
         {
             Console.Write("Enter Your name: ");
             var name = Console.ReadLine();
@@ -24,52 +24,31 @@ namespace TodoApp.Pages
             }
             Console.WriteLine();
 
-            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("------------------------");
             Console.ResetColor();
 
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("1) AddTodo");
-            Console.WriteLine("2) DeleteTodo");
-            Console.WriteLine("3) CompleteTodo");
-            Console.WriteLine("4) UpdateTodo");
+           return DisplayTodoActionList();
+        }
+
+        public static int DisplayTodoActionList()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("1) Add Todo");
+            Console.WriteLine("2) Delete Todo");
+            Console.WriteLine("3) Complete Todo");
+            Console.WriteLine("4) Update Todo");
             Console.WriteLine("5) Exit");
             Console.ResetColor();
             Console.WriteLine();
 
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Write("Enter your Selector : ");
-            int userSelector = Convert.ToInt32(Console.ReadLine());
+            var userSelector = Convert.ToInt32(Console.ReadLine());
             Console.ResetColor();
             Console.WriteLine();
 
-            switch (userSelector)
-            {
-                case 1: 
-                    Console.WriteLine("Add Your Todo");
-                    break;
-
-                case 2:
-                    Console.WriteLine("Delete Your Todo");
-                    break;
-
-                case 3:
-                    Console.WriteLine("Complete Your Todo");
-                    break;
-
-                case 4:
-                    Console.WriteLine("Update Your Todo");
-                    break;
-
-                case 5:
-                    Console.WriteLine("Exit");
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid user selector");
-                    break;
-            }
-
+            return userSelector;
         }
     }
 }

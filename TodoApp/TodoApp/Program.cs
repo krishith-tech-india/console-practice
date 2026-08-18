@@ -15,5 +15,33 @@ Console.WriteLine("Todo Application");
 Console.ResetColor();
 Console.WriteLine();
 
-Home.LoadHomePage(todos);
+int userSelector = Home.LoadHomePage(todos);
+ 
+
+switch (userSelector)
+{
+    case 1: 
+        Console.WriteLine("Add Your Todo");
+        break;
+
+    case 2:
+        Console.WriteLine("Delete Your Todo");
+        break;
+
+    case 3:
+        Console.WriteLine("Complete Your Todo");
+        break;
+
+    case 4:
+        Console.WriteLine("Update Your Todo");
+        break;
+
+    case 5:
+        Console.WriteLine("Exit");
+        break;
+
+    default:
+        Console.WriteLine("Invalid user selector");
+        break;
+}
 

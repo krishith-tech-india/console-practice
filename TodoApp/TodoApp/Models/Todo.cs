@@ -18,7 +18,7 @@ namespace TodoApp.Models
 
         public void DisplayTodo()
         {
-            Console.WriteLine($"{Id}. {Title}\t{Description}");
+            Console.WriteLine($"{Id}. {Title}\n-  {Description}\n");
         }
     }
 }
