@@ -1,12 +1,33 @@
 ﻿using TodoApp.Models;
 using TodoApp.Pages;
 
-List<Todo> todos = new List<Todo>() { 
-    new Todo("Game", "TESR") , 
-    new Todo("Shdfre" , "adSD"), 
-    new Todo("REEF", "FEFWEFEW"),
-    new Todo("EWEW", ""),
-    new Todo("LearnC#", "")
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+List<Todo> todos = new List<Todo>() {
+    new Todo(
+        "Learn C# Fundamentals",
+        "Study classes, objects, constructors, properties, enums, and basic OOP concepts."
+    ),
+
+    new Todo(
+        "Build a Todo Console App",
+        "Create a console-based Todo application with options to add, update, delete, and complete tasks."
+    ),
+
+    new Todo(
+        "Practice LINQ",
+        "Learn and practice LINQ methods such as Where, Select, FirstOrDefault, OrderBy, and Any."
+    ),
+
+    new Todo(
+        "Read a Programming Book",
+        "Spend 30 minutes reading a programming book and take notes on the important concepts."
+    ),
+
+    new Todo(
+        "Practice Coding Problems",
+        "Solve a few beginner-friendly coding problems to improve problem-solving and logical thinking."
+    )
 };
 
 
@@ -15,28 +36,29 @@ Console.WriteLine("Todo Application");
 Console.ResetColor();
 Console.WriteLine();
 
-int userSelector = Home.LoadHomePage(todos);
+Home.LoadHomePage(todos);
+var userSelector = Home.GetHomapgeUserAction();
  
 
 switch (userSelector)
 {
-    case 1: 
+    case UserChoiceEnum.AddTodo: 
         Console.WriteLine("Add Your Todo");
         break;
 
-    case 2:
+    case UserChoiceEnum.DeleteTodo:
         Console.WriteLine("Delete Your Todo");
         break;
 
-    case 3:
+    case UserChoiceEnum.CompleteToto:
         Console.WriteLine("Complete Your Todo");
         break;
 
-    case 4:
+    case UserChoiceEnum.UpdateTodo:
         Console.WriteLine("Update Your Todo");
         break;
 
-    case 5:
+    case UserChoiceEnum.Exit:
         Console.WriteLine("Exit");
         break;
 
