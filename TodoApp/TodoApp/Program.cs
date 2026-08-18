@@ -1,31 +1,19 @@
-﻿Console.ForegroundColor = ConsoleColor.Cyan;
-Console.WriteLine("Todo List");
+﻿using TodoApp.Models;
+using TodoApp.Pages;
+
+List<Todo> todos = new List<Todo>() { 
+    new Todo("Game", "TESR") , 
+    new Todo("Shdfre" , "adSD"), 
+    new Todo("REEF", "FEFWEFEW"),
+    new Todo("EWEW", ""),
+    new Todo("LearnC#", "")
+};
+
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Todo Application");
 Console.ResetColor();
 Console.WriteLine();
 
-Console.Write("Enter Your name: ");
-var name = Console.ReadLine();
-Console.WriteLine();
+Home.LoadHomePage(todos);
 
-Console.WriteLine("Your name: " + name );
-Console.WriteLine();
-
-Console.ForegroundColor = ConsoleColor.Magenta;
-Console.WriteLine("-------- Your TodoList --------");
-Console.ResetColor();
-
-Console.WriteLine();
-Console.WriteLine("Display todo list");
-Console.WriteLine();
-
-Console.ForegroundColor = ConsoleColor.DarkGray;
-Console.WriteLine("------------------------");
-Console.ResetColor();
-
-Console.ForegroundColor = ConsoleColor.DarkYellow;
-Console.WriteLine("1) AddTodo");
-Console.WriteLine("2) DeleteTodo");
-Console.WriteLine("3) CompleteTodo");
-Console.WriteLine("4) UpdateTodo");
-Console.WriteLine("5) Exit");
-Console.ResetColor();
