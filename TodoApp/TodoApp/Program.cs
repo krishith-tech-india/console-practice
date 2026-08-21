@@ -60,7 +60,7 @@ while (true)
             break;
 
         case UserChoiceEnum.UpdateTodo:
-            Console.WriteLine("Update Your Todo");
+            UpdateTodo.EditTodo(todos);
             break;
 
         case UserChoiceEnum.Exit:
