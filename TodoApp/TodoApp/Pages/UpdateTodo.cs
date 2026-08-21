@@ -6,7 +6,7 @@ namespace TodoApp.Pages
     {
         public static void EditTodo(List<Todo> todos)
         {
-            Home.LoadHomePage(todos);
+            Home.DisplayTodoList(todos);
             Console.WriteLine();
 
             Console.Write("Enter your Todo Id Which one you need to Update: ");
@@ -24,6 +24,11 @@ namespace TodoApp.Pages
                     Console.Write("Enter your Update Description: ");
                     string newDesc = Console.ReadLine();
 
+                    if (string.IsNullOrWhiteSpace(newTitle))
+                    {
+                        Console.WriteLine("Invalid Title, Please Try again!!");
+                        return;
+                    }
                     todo.Title = newTitle;
                     todo.Description = newDesc;
 

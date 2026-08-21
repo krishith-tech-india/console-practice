@@ -59,9 +59,9 @@ while (true)
             CompleteTodo.Complete(todos);
             break;
 
-    case UserChoiceEnum.UpdateTodo:
-        UpdateTodo.EditTodo(todos);
-        break;
+        case UserChoiceEnum.UpdateTodo:
+            UpdateTodo.EditTodo(todos);
+            break;
 
         case UserChoiceEnum.Exit:
             Console.WriteLine("Exit");
