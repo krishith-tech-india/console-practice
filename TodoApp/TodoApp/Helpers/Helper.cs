@@ -1,5 +1,8 @@
 ﻿
 
+using TodoApp.Models;
+using TodoApp.Pages;
+
 namespace TodoApp.Helpers
 {
     public class Helper
@@ -18,19 +21,26 @@ namespace TodoApp.Helpers
             Console.ResetColor();
             Console.WriteLine();
         }
-        public static void AddTodo()
+
+        public static string ExitDialogConfirm()
         {
+            Console.WriteLine();
+            Console.WriteLine("Do you Want to Exit?");
+            Console.WriteLine("1) Yes");
+            Console.WriteLine("2) No");
 
-        }
+            Console.WriteLine();
+            Console.Write("Enter your Choice: ");
+            int userChoice = Convert.ToInt32(Console.ReadLine());
 
-        public static void UpdateTodo()
-        {
-
-        }
-
-        public static void DeleteTodo()
-        {
-
+            if(userChoice == 1)
+            {
+                return "Yes";
+            }
+            else
+            {
+                return "No";
+            }
         }
     }
 }
