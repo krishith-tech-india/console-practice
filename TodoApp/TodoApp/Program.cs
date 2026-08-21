@@ -52,7 +52,7 @@ while (true)
             break;
 
         case UserChoiceEnum.DeleteTodo:
-            Console.WriteLine("Delete Your Todo");
+            DeleteTodo.RemoveTodo(todos);
             break;
 
         case UserChoiceEnum.CompleteToto:
