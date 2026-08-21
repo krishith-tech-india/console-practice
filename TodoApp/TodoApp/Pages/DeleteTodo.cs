@@ -7,7 +7,7 @@ namespace TodoApp.Pages
 	{
         public static void RemoveTodo(List<Todo> todos)
         {
-            Home.LoadHomePage(todos);
+            Home.DisplayTodoList(todos);
             Console.WriteLine();
 
 

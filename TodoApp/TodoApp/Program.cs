@@ -51,9 +51,9 @@ while (true)
             Console.WriteLine("Todo Created Successfully!!");
             break;
 
-    case UserChoiceEnum.DeleteTodo:
-        DeleteTodo.RemoveTodo(todos);
-        break;
+        case UserChoiceEnum.DeleteTodo:
+            DeleteTodo.RemoveTodo(todos);
+            break;
 
         case UserChoiceEnum.CompleteToto:
             CompleteTodo.Complete(todos);
