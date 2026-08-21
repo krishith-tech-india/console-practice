@@ -52,7 +52,7 @@ while (true)
             break;
 
         case UserChoiceEnum.DeleteTodo:
-            Console.WriteLine("Delete Your Todo");
+            DeleteTodo.RemoveTodo(todos);
             break;
 
         case UserChoiceEnum.CompleteToto:
@@ -60,11 +60,15 @@ while (true)
             break;
 
         case UserChoiceEnum.UpdateTodo:
-            Console.WriteLine("Update Your Todo");
+            UpdateTodo.EditTodo(todos);
             break;
 
         case UserChoiceEnum.Exit:
-            Console.WriteLine("Exit");
+            string userChoice = Helper.ExitDialogConfirm();
+            if(userChoice.Equals("Yes"))
+            {
+                return;
+            }
             break;
     }
 
