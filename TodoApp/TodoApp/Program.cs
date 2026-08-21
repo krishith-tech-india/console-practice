@@ -64,7 +64,11 @@ while (true)
             break;
 
         case UserChoiceEnum.Exit:
-            Console.WriteLine("Exit");
+            string userChoice = Helper.ExitDialogConfirm();
+            if(userChoice.Equals("Yes"))
+            {
+                return;
+            }
             break;
     }
 
