@@ -4,15 +4,8 @@ namespace TodoApp.Pages
 {
     public class Home
     {
-        public static void LoadHomePage(List<Todo> todos)
+        public static void DisplayTodoList(List<Todo> todos)
         {
-            Console.Write("Enter Your name: ");
-            var name = Console.ReadLine();
-            Console.WriteLine();
-
-            Console.WriteLine("Your name: " + name);
-            Console.WriteLine();
-
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("-------- Your TodoList --------");
             Console.ResetColor();

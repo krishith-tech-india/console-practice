@@ -1,4 +1,5 @@
-﻿using TodoApp.Models;
+﻿using TodoApp.Helpers;
+using TodoApp.Models;
 using TodoApp.Pages;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -31,39 +32,43 @@ List<Todo> todos = new List<Todo>() {
 };
 
 
-Console.ForegroundColor = ConsoleColor.Cyan;
-Console.WriteLine("Todo Application");
-Console.ResetColor();
-Console.WriteLine();
 
-Home.LoadHomePage(todos);
-var userSelector = Home.GetHomapgeUserAction();
- 
 
-switch (userSelector)
+while (true)
 {
-    case UserChoiceEnum.AddTodo: 
-        Console.WriteLine("Add Your Todo");
-        break;
+    Helper.ClearContent();
 
-    case UserChoiceEnum.DeleteTodo:
-        Console.WriteLine("Delete Your Todo");
-        break;
+    Home.DisplayTodoList(todos);
+    var userSelector = Home.GetHomapgeUserAction();
 
-    case UserChoiceEnum.CompleteToto:
-        Console.WriteLine("Complete Your Todo");
-        break;
+    Helper.ClearContent();
 
-    case UserChoiceEnum.UpdateTodo:
-        Console.WriteLine("Update Your Todo");
-        break;
+    switch (userSelector)
+    {
+        case UserChoiceEnum.AddTodo: 
+            var newTodo = AddTodo.CreateTodo();
+            todos.Add(newTodo);
+            Console.WriteLine("Todo Created Successfully!!");
+            break;
 
-    case UserChoiceEnum.Exit:
-        Console.WriteLine("Exit");
-        break;
+        case UserChoiceEnum.DeleteTodo:
+            Console.WriteLine("Delete Your Todo");
+            break;
 
-    default:
-        Console.WriteLine("Invalid user selector");
-        break;
+        case UserChoiceEnum.CompleteToto:
+            CompleteTodo.Complete(todos);
+            break;
+
+        case UserChoiceEnum.UpdateTodo:
+            Console.WriteLine("Update Your Todo");
+            break;
+
+        case UserChoiceEnum.Exit:
+            Console.WriteLine("Exit");
+            break;
+    }
+
+    Console.Write("Press Enter to Continue ");
+    var x = Console.ReadLine();
 }
 
